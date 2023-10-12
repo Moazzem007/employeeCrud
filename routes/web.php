@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/allDepartments', [\App\Http\Controllers\DepartmentController::class, 'index'])->name('departments');
+Route::post('/addDepartment', [\App\Http\Controllers\DepartmentController::class, 'addDepartment'])->name('add.department');
+Route::post('/updateDepartment', [\App\Http\Controllers\DepartmentController::class, 'updateDepartment'])->name('update.department');
+Route::post('/deleteDepartment', [\App\Http\Controllers\DepartmentController::class, 'deleteDepartment'])->name('delete.department');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-
             $table->id();
             $table->unsignedBigInteger('department_id');
             $table->string('first_name');
@@ -22,7 +21,6 @@ return new class extends Migration
             $table->date('hire_date');
             $table->string('job_title');
             $table->string('salary');
-            $table->integer('department_id');
             $table->timestamps();
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
