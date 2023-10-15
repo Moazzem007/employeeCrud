@@ -35,6 +35,16 @@ Route::post('/deleteEmployee', [\App\Http\Controllers\EmployeeController::class,
 Route::get('/show', [\App\Http\Controllers\QuestionController::class, 'show'])->name('show.questions');
 
 
+Route::get('/generate-pdf', [\App\Http\Controllers\PDFController::class, 'generatePDF'])->name('generate.pdf');
+
+
+Route::get('/write-email/{id}', [\App\Http\Controllers\EmailController::class, 'writeEmail'])->name('write.email');
+Route::post('/send-mail/{id}', [\App\Http\Controllers\EmailController::class, 'sendMail'])->name('send.mail');
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

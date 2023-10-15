@@ -33,7 +33,6 @@
 <div class="wrapper">
 
     <!-- Preloader -->
-    
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -112,6 +111,26 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         {{--        All the contents will be shown here from different components--}}
+        @guest()
+        @else
+            <div class="row">
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 mx-5 my-5">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <p>All Employee Report</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="{{ route('generate.pdf') }}" class="small-box-footer">Generate report <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+        @endguest
+
         @yield('content')
     </div>
     <!-- /.content-wrapper -->

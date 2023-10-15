@@ -15,6 +15,7 @@
                 <th scope="col">Hire date</th>
                 <th scope="col">Designation</th>
                 <th scope="col">Salary</th>
+                <th scope="col">Send email</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
@@ -30,6 +31,9 @@
                     <td>{{$employee->hire_date}}</td>
                     <td>{{$employee->job_title}}</td>
                     <td>{{$employee->salary}}</td>
+                    <td>
+                        <a href="{{route("write.email", $employee->id)}}" class="btn btn-info"><i class="lar la-envelope"></i></a>
+                    </td>
 
                     <td>
                         <a href="{{route("edit.employee", $employee->id)}}" class="btn btn-success"><i class="las la-edit"></i></a>
