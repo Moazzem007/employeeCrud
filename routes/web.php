@@ -32,7 +32,7 @@ Route::get('/editEmployee/{id}', [\App\Http\Controllers\EmployeeController::clas
 Route::post('/deleteEmployee', [\App\Http\Controllers\EmployeeController::class, 'deleteEmployee'])->name('delete.employee');
 
 
-
+Route::get('/show', [\App\Http\Controllers\QuestionController::class, 'show'])->name('show.questions');
 
 
 Route::get('/dashboard', function () {
