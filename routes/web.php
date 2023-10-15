@@ -23,6 +23,18 @@ Route::post('/addDepartment', [\App\Http\Controllers\DepartmentController::class
 Route::post('/updateDepartment', [\App\Http\Controllers\DepartmentController::class, 'updateDepartment'])->name('update.department');
 Route::post('/deleteDepartment', [\App\Http\Controllers\DepartmentController::class, 'deleteDepartment'])->name('delete.department');
 
+
+
+Route::get('/allEmployees', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employees');
+Route::post('/addEmployee', [\App\Http\Controllers\EmployeeController::class, 'addEmployee'])->name('add.employee');
+Route::post('/updateEmployee/{id}', [\App\Http\Controllers\EmployeeController::class, 'updateEmployee'])->name('update.employee');
+Route::get('/editEmployee/{id}', [\App\Http\Controllers\EmployeeController::class, 'editEmployee'])->name('edit.employee');
+Route::post('/deleteEmployee', [\App\Http\Controllers\EmployeeController::class, 'deleteEmployee'])->name('delete.employee');
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

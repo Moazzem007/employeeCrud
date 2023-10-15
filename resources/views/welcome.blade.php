@@ -91,9 +91,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('employees')}}" class="nav-link">
                                 <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Warning</p>
+                                <p>All Employees</p>
                             </a>
                         </li>
                         <li class="nav-item">
